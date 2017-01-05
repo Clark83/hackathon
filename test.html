@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app='airApp'>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src='./main.js'></script>
+    </head>
+    <body ng-controller='airControl as aCtl'>
+
+        <div>
+            {{aCtl.title}}
+        </div>
+          <div>
+     <form>
+       <input runat='server' id='airportCity' type='text' name='airport city' ng-model='aCtl.airportCity'>Airport City</input></br>
+       <input runat='server' id='userStreet' type='text' name='street address' ng-model='aCtl.userStreet'>Street Address</input></br>
+       <input runat='server' id='userCity' type='text' name='city' ng-model='aCtl.userCity'>City</input></br>
+       <input runat='server' id='userState' type='text' name='state' ng-model='aCtl.userState'>State</input></br>
+       <input runat='server' id='userZip' type='text' name='zip' ng-model='aCtl.userZip'>Zipcode</input></br>
+       <button ng-click='aCtl.userSubmit()'>Submit</button></br>
+     </form>
+   </div>
+</br>
+</br>
+<table>
+<tr ng-repeat='airports in aCtl.airportSelect'><td>{{airports.name}}</td><td><a ng-click='aCtl.getAirportCode()'>{{airports.code}}</a></td></tr>
+    </table>
+    </body>
+
+</html>
